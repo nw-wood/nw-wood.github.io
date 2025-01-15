@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './RandomQuoteMachine.css';
+import { Link } from 'react-router-dom';
 
 const quoteAPIURL = "https://api.kanye.rest/";
 
@@ -46,7 +47,7 @@ class QuoteMachine extends Component {
                     <button id="new-quote" className="button" onClick={this.handleClick}>New Random Quote</button>
                 </div>
             </div>
-            <a id ="home-link" href="/">back home</a>
+            <Link id="home-link" to="/">back home</Link>
         </div>
     );
 
@@ -58,16 +59,15 @@ class QuoteMachine extends Component {
                 return response.json();
             })
             .then((message) => {
-                //console.log('message:', message.quote);
-                    if (this.state.transition !== true) {
-                        this.setState({ fade: 'fade-out', transition: true}, () => {
-                            setTimeout(() => {
-                                const yeezyQuote: Quote = { quote: `${message.quote}`, author: "Kanye West" }
-                                this.setState({ ...yeezyQuote, fade: 'fade-in'});
-                                setTimeout(() => { this.setState({transition: false})}, 500);
-                            }, 500);
-                        });
-                    }
+                if (this.state.transition !== true) {
+                    this.setState({ fade: 'fade-out', transition: true}, () => {
+                        setTimeout(() => {
+                            const yeezyQuote: Quote = { quote: `${message.quote}`, author: "Kanye West" }
+                            this.setState({ ...yeezyQuote, fade: 'fade-in'});
+                            setTimeout(() => { this.setState({transition: false})}, 500);
+                        }, 500);
+                    });
+                }
             })
             .catch((err) => {
                 console.error("err:", err);

@@ -1,7 +1,7 @@
 import React from 'react';
 //import logo from './../logo.svg';
 import './Portfolio.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import QuoteMachine from './../portfolio/pages/projects/random-quote-machine/RandomQuoteMachine';
 import Home from './../portfolio/pages/home/Home';
 
