@@ -1,6 +1,7 @@
 import React from 'react';
-import logo from './../logo.svg';
+//import logo from './../logo.svg';
 import './Portfolio.css';
+import QuoteMachine from './../portfolio/pages/projects/random-quote-machine/RandomQuoteMachine';
 
 class Portfolio extends React.Component {
     /* constructor(props: any) {
@@ -8,14 +9,9 @@ class Portfolio extends React.Component {
     } */
 
     render = () => (
-        <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            🤠
-          </p>
-        </header>
-      </div>
+        <div>
+          <QuoteMachine />
+        </div>
     );
 }
 
