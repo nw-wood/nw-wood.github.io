@@ -22,22 +22,32 @@ class QuoteMachine extends Component {
         transition: false,
     }
 
+    /* componentDidMount() {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js';
+        script.async = true;
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        };
+    } */
+
 	render = () => (
-        
         <div className="back-drop">
             <section className="fa fa-quote-left"></section>
             <div id="quote-box">
                 <div id="quote" className={this.state.fade}>
-                    <div id="quote-text">{this.state.quote}</div>
-                    <div id="author-text">{this.state.author}</div>
+                    <div id="text">{this.state.quote}</div>
+                    <div id="author">{this.state.author}</div>
                 </div>
                 <div id="user-interactions">
-                    <a  id="tweet-quote" className="fa fa-brands fa-twitter" href={`https://twitter.com/intent/tweet?text="${this.state.quote}" - Kanye West`}> </a>
-                    <button id="new-quote-btn" className="button" onClick={this.handleClick}>New Random Quote</button>
+                    <a target="_blank" id="tweet-quote" className="fa fa-brands fa-twitter" href={`https://twitter.com/intent/tweet?text="${this.state.quote}" - Kanye West`} rel="noreferrer"> </a>
+                    <button id="new-quote" className="button" onClick={this.handleClick}>New Random Quote</button>
                 </div>
             </div>
+            <a id ="home-link" href="/">back home</a>
         </div>
-        
     );
 
     handleClick = () => this.requestAPIQuote();
@@ -48,11 +58,11 @@ class QuoteMachine extends Component {
                 return response.json();
             })
             .then((message) => {
-                console.log('message:', message.quote);
+                //console.log('message:', message.quote);
                     if (this.state.transition !== true) {
                         this.setState({ fade: 'fade-out', transition: true}, () => {
                             setTimeout(() => {
-                                const yeezyQuote: Quote = { quote: `${message.quote}.`, author: "Kanye West" }
+                                const yeezyQuote: Quote = { quote: `${message.quote}`, author: "Kanye West" }
                                 this.setState({ ...yeezyQuote, fade: 'fade-in'});
                                 setTimeout(() => { this.setState({transition: false})}, 500);
                             }, 500);

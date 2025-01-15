@@ -5,7 +5,16 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	animation: fadeIn 1s ease-out forwards;
 }
+
+#home-link {
+	color: black;
+    text-decoration: none;
+    opacity: .5;
+	padding-top: 3.3%;
+}
+
 
 #quote-box {
 	width: 66vw;
@@ -47,7 +56,7 @@
 	/* background-color: red; */
 }
 
-#quote-text {
+#text {
 	height: 80%;
 	width: 100%;
 	background-color: white;
@@ -59,7 +68,7 @@
 	text-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-#author-text {
+#author {
 	font-size: .9em;
 	text-align: right;
 	margin-right: 10%;
@@ -94,7 +103,7 @@
 	animation: fadeIn 1s ease-out forwards;
 }
 
-#new-quote-btn {
+#new-quote {
 	background-color: slategrey;
 	color: white;
 	padding: 12px 24px;
@@ -107,7 +116,7 @@
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-#new-quote-btn:hover {
+#new-quote:hover {
 	background-color: darkslategray;
 	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
