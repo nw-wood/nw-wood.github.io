@@ -1,4 +1,4 @@
-#back-drop { 
+#back-drop {
     background-color: lightsalmon;
     height: 100vh;
     display: flex;
@@ -8,30 +8,39 @@
 }
 
 section {
-    padding: 10px;
+    padding-bottom: 10px;
 }
 
-#blurb, #thanks, #notice {
+#blurb,
+#thanks,
+#notice {
     color: darkslategray;
-}
-
-#project-links {
-    padding-bottom: 10%;
 }
 
 #landing-message {
     color: darkslateblue;
 }
 
-#project-quotes {
+#project-links {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    justify-self: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#project-links > * {
     background-color: darksalmon;
     border-radius: 10px;
     color: darkred;
     text-decoration: none;
-    opacity: .75;
+    opacity: 0.75;
     padding: 5px;
+    margin-left: 5px;
+    width: 40%;
 }
 
-#project-quotes:hover {
+##project-links:hover {
     opacity: 1;
 }
